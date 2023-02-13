@@ -16,5 +16,15 @@ namespace Dirary
         {
             InitializeComponent();
         }
+
+        // Добавление при нажатии на кнопку новой строки.
+        private void buttonAddStr_Click(object sender, EventArgs e)
+        {
+            // Увелить максимальное количество строк
+            // для создания новой ячейки строки.
+            tableLayoutPanel1.RowCount++;
+            // Создать строку, придав ей стиль.
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27));
+        }
     }
 }
