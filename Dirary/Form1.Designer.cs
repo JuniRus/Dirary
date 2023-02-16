@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -39,6 +38,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonSaveCase = new System.Windows.Forms.Button();
             this.buttonAddStr = new System.Windows.Forms.Button();
@@ -64,10 +64,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(187)))), ((int)(((byte)(222)))));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 0);
@@ -85,27 +86,18 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1009, 383);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(212, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(993, 21);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.checkBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(108, 4);
+            this.panel5.Location = new System.Drawing.Point(112, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(97, 21);
+            this.panel5.Size = new System.Drawing.Size(101, 21);
             this.panel5.TabIndex = 3;
             // 
             // checkBox1
             // 
+            this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Location = new System.Drawing.Point(42, 3);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
@@ -119,25 +111,27 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(4, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(97, 21);
+            this.panel7.Size = new System.Drawing.Size(101, 21);
             this.panel7.TabIndex = 5;
             // 
             // label6
             // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(144)))), ((int)(((byte)(226)))));
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 21);
+            this.label6.Size = new System.Drawing.Size(101, 21);
             this.label6.TabIndex = 4;
             this.label6.Text = "1";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(144)))), ((int)(((byte)(226)))));
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(4, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 27);
+            this.label7.Size = new System.Drawing.Size(101, 27);
             this.label7.TabIndex = 6;
             this.label7.Text = "2";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,14 +140,15 @@
             // 
             this.panel6.Controls.Add(this.checkBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(108, 32);
+            this.panel6.Location = new System.Drawing.Point(112, 32);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(97, 21);
+            this.panel6.Size = new System.Drawing.Size(101, 21);
             this.panel6.TabIndex = 8;
             // 
             // checkBox2
             // 
-            this.checkBox2.Location = new System.Drawing.Point(42, 4);
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox2.Location = new System.Drawing.Point(42, 3);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 9;
@@ -163,14 +158,23 @@
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(212, 32);
-            this.textBox2.Multiline = true;
+            this.textBox2.Location = new System.Drawing.Point(220, 32);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(993, 21);
+            this.textBox2.Size = new System.Drawing.Size(993, 20);
             this.textBox2.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(220, 4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(993, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TabStop = false;
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(187)))), ((int)(((byte)(222)))));
             this.panel4.Controls.Add(this.buttonSaveCase);
             this.panel4.Controls.Add(this.buttonAddStr);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -181,6 +185,8 @@
             // 
             // buttonSaveCase
             // 
+            this.buttonSaveCase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
+            this.buttonSaveCase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSaveCase.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonSaveCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSaveCase.Location = new System.Drawing.Point(800, 0);
@@ -188,10 +194,12 @@
             this.buttonSaveCase.Size = new System.Drawing.Size(209, 46);
             this.buttonSaveCase.TabIndex = 1;
             this.buttonSaveCase.Text = "Сохранить задачи";
-            this.buttonSaveCase.UseVisualStyleBackColor = true;
+            this.buttonSaveCase.UseVisualStyleBackColor = false;
             // 
             // buttonAddStr
             // 
+            this.buttonAddStr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
+            this.buttonAddStr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddStr.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonAddStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAddStr.Location = new System.Drawing.Point(0, 0);
@@ -199,7 +207,7 @@
             this.buttonAddStr.Size = new System.Drawing.Size(209, 46);
             this.buttonAddStr.TabIndex = 0;
             this.buttonAddStr.Text = "Добавить строку";
-            this.buttonAddStr.UseVisualStyleBackColor = true;
+            this.buttonAddStr.UseVisualStyleBackColor = false;
             this.buttonAddStr.Click += new System.EventHandler(this.buttonAddStr_Click);
             // 
             // panel2
@@ -215,10 +223,12 @@
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(187)))), ((int)(((byte)(222)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(995, 44);
+            this.label2.Size = new System.Drawing.Size(1005, 44);
             this.label2.TabIndex = 5;
             this.label2.Text = "Задачи:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,42 +246,46 @@
             // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(139)))), ((int)(((byte)(217)))));
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(206, 0);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(214, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(799, 31);
+            this.label5.Size = new System.Drawing.Size(791, 31);
             this.label5.TabIndex = 10;
             this.label5.Text = "Содержание";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(139)))), ((int)(((byte)(217)))));
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(103, 0);
+            this.label4.Location = new System.Drawing.Point(107, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 31);
+            this.label4.Size = new System.Drawing.Size(107, 31);
             this.label4.TabIndex = 9;
             this.label4.Text = "Выполнение";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(139)))), ((int)(((byte)(217)))));
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 31);
+            this.label3.Size = new System.Drawing.Size(107, 31);
             this.label3.TabIndex = 8;
             this.label3.Text = "Номер задачи";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(175)))), ((int)(((byte)(227)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -351,9 +365,9 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
