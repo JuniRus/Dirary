@@ -33,7 +33,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -51,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -114,24 +114,13 @@
             this.panel7.Size = new System.Drawing.Size(101, 21);
             this.panel7.TabIndex = 5;
             // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(144)))), ((int)(((byte)(226)))));
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "1";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(144)))), ((int)(((byte)(226)))));
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(4, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 27);
+            this.label7.Size = new System.Drawing.Size(101, 21);
             this.label7.TabIndex = 6;
             this.label7.Text = "2";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,10 +146,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox2.Location = new System.Drawing.Point(220, 32);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(993, 20);
+            this.textBox2.Size = new System.Drawing.Size(787, 20);
             this.textBox2.TabIndex = 9;
             // 
             // textBox1
@@ -168,7 +157,7 @@
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(220, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(993, 20);
+            this.textBox1.Size = new System.Drawing.Size(787, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TabStop = false;
             // 
@@ -318,6 +307,17 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(194, 29);
             this.dateTimePicker1.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(144)))), ((int)(((byte)(226)))));
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 21);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "1";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +351,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonSaveCase;
         private System.Windows.Forms.Button buttonAddStr;
@@ -368,6 +367,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label label6;
     }
 }
 

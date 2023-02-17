@@ -69,7 +69,7 @@ namespace Dirary
 
             // Добавление текстового поля.
             textBoxes[rows_count] = new TextBox();
-            textBoxes[rows_count].Dock = DockStyle.Fill;
+            textBoxes[rows_count].Dock = DockStyle.Top;
             tableLayoutPanel1.Controls.Add(textBoxes[rows_count], 2, tableLayoutPanel1.RowCount - 2);
 
             rows_count++;
