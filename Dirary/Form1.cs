@@ -20,6 +20,9 @@ namespace Dirary
         // Переменная, хранящая путь к файлу xml.
         public const string PATH = "tasks.xml";
 
+        // Создать переменную времени.
+        DateTime dateTime;
+
         // Создать массивы, хранящих объекты для заполнения полей
         public static Label[] labels = new Label[53];
         public static CheckBox[] checkBoxes = new CheckBox[53];
@@ -44,7 +47,12 @@ namespace Dirary
             checkBox1.Checked = componentsUI.checked1;
             checkBox2.Checked = componentsUI.checked2;
 
-            for (int i = 3; i < componentsUI.index_count; i++)
+            // Инициализировать индекс.
+            indexcount = componentsUI.index_count;
+
+            dateTime = componentsUI.date;
+
+            for (int i = 3; i < indexcount; i++)
             {
                 // Добавление строк.
                 tableLayoutPanel1.RowCount++;
@@ -157,11 +165,11 @@ namespace Dirary
         {
             ComponentsUI cUI = new ComponentsUI(this.indexcount, this.checkBox1.Checked,
                                                 this.checkBox2.Checked, this.textBox1.Text,
-                                                this.textBox2.Text);
+                                                this.textBox2.Text, this.dateTimePicker);
 
             XmlSerializer xml = new XmlSerializer(typeof(ComponentsUI));
 
-            using (FileStream fs = new FileStream(PATH, FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream(PATH, FileMode.Create))
             {
                 xml.Serialize(fs, cUI);
             }

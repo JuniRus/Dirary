@@ -18,13 +18,17 @@ namespace Dirary
         public string task1;
         public string task2;
 
+        // Переменная времени.
+        public DateTime date;
+
         // Массивы для содержания сохранённых значений.
         public bool[] checkeds = new bool[53];
         public string[] tasks = new string[53];
 
+        // Конструктор для успешной сериализации.
         public ComponentsUI() { }
 
-        public ComponentsUI(int indexcount, bool checked1, bool checked2, string task1, string task2)
+        public ComponentsUI(int indexcount, bool checked1, bool checked2, string task1, string task2, DateTimePicker dtp)
         {
             // Получена информация о количестве строк программы.
             this.index_count = indexcount;
@@ -32,6 +36,9 @@ namespace Dirary
             this.checked2 = checked2;
             this.task1 = task1;
             this.task2 = task2;
+
+            // Сохранить дату.
+            date = dtp.Value;
 
             // Сохранить состояния объектов.
             for (int i = 3; i < indexcount; i++)
