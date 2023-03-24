@@ -9,10 +9,13 @@ namespace Dirary
     [Serializable]
     public class ComponentsUI
     {
-        // Строки программы.
+        // Переменная индексации массивов.
         public int index_count;
 
-        // Первые две строки программы.
+        // Строка с текущим путём к файлу.
+        public string current_file;
+
+        // Переменные первых двух строк программы.
         public bool checked1;
         public bool checked2;
         public string task1;
@@ -25,9 +28,10 @@ namespace Dirary
         public bool[] checkeds = new bool[53];
         public string[] tasks = new string[53];
 
-        // Конструктор для успешной сериализации.
+        // Базовый конструктор, необходимый для сериализации объекта класса.
         public ComponentsUI() { }
 
+        // Конструктор объекта для сериализации.
         public ComponentsUI(int indexcount, bool checked1, bool checked2, string task1, string task2, DateTimePicker dtp)
         {
             // Получена информация о количестве строк программы.
@@ -39,11 +43,15 @@ namespace Dirary
 
             // Сохранить дату.
             date = dtp.Value;
+            // Построить путь, по которому располагается файл с сохранёнными данными.
+            current_file = Form1.path_directory + "\\saved_tasks\\" + date.Date.ToString("d").Replace('.', '_') + ".xml";
 
             // Сохранить состояния объектов.
             for (int i = 3; i < indexcount; i++)
             {
+                // Сохранить состояния флажков.
                 checkeds[i] = Form1.checkBoxes[i].Checked;
+                // Сохранить значения текстовых полей.
                 tasks[i] = Form1.textBoxes[i].Text;
             }
         }
