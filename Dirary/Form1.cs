@@ -165,11 +165,13 @@ namespace Dirary
 
             for (int i = 3; i < indexcount; i++)
             {
+                if (tableLayoutPanel1.RowCount == 3) return;
+                
+                tableLayoutPanel1.Controls.Remove(labels[i]);
+                tableLayoutPanel1.Controls.Remove(panels[i]);
+                tableLayoutPanel1.Controls.Remove(checkBoxes[i]);
+                tableLayoutPanel1.Controls.Remove(textBoxes[i]);
                 tableLayoutPanel1.RowCount--;
-                labels[i] = null;
-                checkBoxes[i] = null;
-                textBoxes[i] = null;
-                panels[i] = null;
             }
         }
         
