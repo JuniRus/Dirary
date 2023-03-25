@@ -40,6 +40,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonDelStr = new System.Windows.Forms.Button();
             this.buttonSaveCase = new System.Windows.Forms.Button();
             this.buttonAddStr = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -67,8 +68,8 @@
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(187)))), ((int)(((byte)(222)))));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 0);
@@ -91,9 +92,9 @@
             // 
             this.panel5.Controls.Add(this.checkBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(109, 4);
+            this.panel5.Location = new System.Drawing.Point(112, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(98, 21);
+            this.panel5.Size = new System.Drawing.Size(94, 21);
             this.panel5.TabIndex = 3;
             // 
             // checkBox1
@@ -112,7 +113,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(4, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(98, 21);
+            this.panel7.Size = new System.Drawing.Size(101, 21);
             this.panel7.TabIndex = 5;
             // 
             // label6
@@ -121,7 +122,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 21);
+            this.label6.Size = new System.Drawing.Size(101, 21);
             this.label6.TabIndex = 4;
             this.label6.Text = "1";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -132,7 +133,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(4, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 27);
+            this.label7.Size = new System.Drawing.Size(101, 27);
             this.label7.TabIndex = 6;
             this.label7.Text = "2";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,9 +142,9 @@
             // 
             this.panel6.Controls.Add(this.checkBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(109, 32);
+            this.panel6.Location = new System.Drawing.Point(112, 32);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(98, 21);
+            this.panel6.Size = new System.Drawing.Size(94, 21);
             this.panel6.TabIndex = 8;
             // 
             // checkBox2
@@ -159,23 +160,24 @@
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Location = new System.Drawing.Point(214, 32);
+            this.textBox2.Location = new System.Drawing.Point(213, 32);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(791, 20);
+            this.textBox2.Size = new System.Drawing.Size(792, 20);
             this.textBox2.TabIndex = 9;
             // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Location = new System.Drawing.Point(214, 4);
+            this.textBox1.Location = new System.Drawing.Point(213, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(791, 20);
+            this.textBox1.Size = new System.Drawing.Size(792, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TabStop = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(187)))), ((int)(((byte)(222)))));
+            this.panel4.Controls.Add(this.buttonDelStr);
             this.panel4.Controls.Add(this.buttonSaveCase);
             this.panel4.Controls.Add(this.buttonAddStr);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -184,15 +186,29 @@
             this.panel4.Size = new System.Drawing.Size(1009, 46);
             this.panel4.TabIndex = 16;
             // 
+            // buttonDelStr
+            // 
+            this.buttonDelStr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
+            this.buttonDelStr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelStr.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonDelStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelStr.Location = new System.Drawing.Point(0, 0);
+            this.buttonDelStr.Name = "buttonDelStr";
+            this.buttonDelStr.Size = new System.Drawing.Size(212, 46);
+            this.buttonDelStr.TabIndex = 2;
+            this.buttonDelStr.Text = "Удалить строку";
+            this.buttonDelStr.UseVisualStyleBackColor = false;
+            this.buttonDelStr.Click += new System.EventHandler(this.buttonDelStr_Click);
+            // 
             // buttonSaveCase
             // 
             this.buttonSaveCase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
             this.buttonSaveCase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSaveCase.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonSaveCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveCase.Location = new System.Drawing.Point(793, 0);
+            this.buttonSaveCase.Location = new System.Drawing.Point(797, 0);
             this.buttonSaveCase.Name = "buttonSaveCase";
-            this.buttonSaveCase.Size = new System.Drawing.Size(216, 46);
+            this.buttonSaveCase.Size = new System.Drawing.Size(212, 46);
             this.buttonSaveCase.TabIndex = 1;
             this.buttonSaveCase.Text = "Сохранить задачи";
             this.buttonSaveCase.UseVisualStyleBackColor = false;
@@ -202,11 +218,11 @@
             // 
             this.buttonAddStr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(231)))), ((int)(((byte)(201)))));
             this.buttonAddStr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddStr.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonAddStr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonAddStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAddStr.Location = new System.Drawing.Point(0, 0);
             this.buttonAddStr.Name = "buttonAddStr";
-            this.buttonAddStr.Size = new System.Drawing.Size(216, 46);
+            this.buttonAddStr.Size = new System.Drawing.Size(1009, 46);
             this.buttonAddStr.TabIndex = 0;
             this.buttonAddStr.Text = "Добавить строку";
             this.buttonAddStr.UseVisualStyleBackColor = false;
@@ -252,9 +268,9 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(214, 0);
+            this.label5.Location = new System.Drawing.Point(208, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(791, 31);
+            this.label5.Size = new System.Drawing.Size(797, 31);
             this.label5.TabIndex = 10;
             this.label5.Text = "Содержание";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -267,7 +283,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(107, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 31);
+            this.label4.Size = new System.Drawing.Size(101, 31);
             this.label4.TabIndex = 9;
             this.label4.Text = "Выполнение";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -370,6 +386,7 @@
         public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button buttonDelStr;
     }
 }
 

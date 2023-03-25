@@ -39,9 +39,26 @@ namespace Dirary
             InitializeTasks();
         }
 
-
-
         // Функциональные кнопки сохранения задач.
+
+        // Кнопка удаления строки с задачей.
+        private void buttonDelStr_Click(object sender, EventArgs e)
+        {
+            // Если остаётся две строки задачи, то вывести предупреждающее сообщение.
+            if (tableLayoutPanel1.RowCount == 3)
+            {
+                MessageBox.Show("Достигнуто минимально допустимое количество строк!");
+                return;
+            }
+
+            // Удалить задачи со строками.
+            tableLayoutPanel1.Controls.Remove(labels[indexcount - 1]);
+            tableLayoutPanel1.Controls.Remove(panels[indexcount - 1]);
+            tableLayoutPanel1.Controls.Remove(checkBoxes[indexcount - 1]);
+            tableLayoutPanel1.Controls.Remove(textBoxes[indexcount - 1]);
+            tableLayoutPanel1.RowCount--;
+            indexcount--;
+        }
 
         // Добавление при нажатии на кнопку новой строки.
         public void buttonAddStr_Click(object sender, EventArgs e)
@@ -163,6 +180,7 @@ namespace Dirary
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
 
+            // Удалить остальные строки.
             for (int i = 3; i < indexcount; i++)
             {
                 if (tableLayoutPanel1.RowCount == 3) return;
@@ -174,7 +192,7 @@ namespace Dirary
                 tableLayoutPanel1.RowCount--;
             }
         }
-        
+
         // Добавление в окно приложения сохранённых на выбранный день задач.
         private void InitializeTasks()
         {
