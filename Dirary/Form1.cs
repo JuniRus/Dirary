@@ -10,29 +10,20 @@ namespace Dirary
     {
         // Объявление переменных и массивов.
         
-        // Переменная индексации массивов.
         int indexcount = 3;
-
-        // Переменная времени для пути файлов.
         DateTime dateTime;
 
         // Создание полного пути к файлам сохранения задач.
         static string path_program = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        // Получения полного пути к файлам сохранения задач.
         public static string path_directory = Path.GetDirectoryName(path_program);
 
         // Создать массивы, хранящих объекты для заполнения полей
 
-        // Массив надписей, обозначающих номер задачи.
         public static Label[] labels = new Label[53];
-        // Массив флажков для отметки выполненных задач.
         public static CheckBox[] checkBoxes = new CheckBox[53];
-        // Массив текстовых полей для описания задачи.
         public static TextBox[] textBoxes = new TextBox[53];
-        // Массив панелей для размещения флажков в таблице.
         public static Panel[] panels = new Panel[53];
 
-        // Срабатывает сразу при запуске программы.
         public Form1()
         {
             InitializeComponent();
@@ -52,14 +43,9 @@ namespace Dirary
             }
 
             // Удалить задачи со строками.
-
-            // Удалить надпись из первой ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(labels[indexcount - 1]);
-            // Удалить пенель флажка из второй ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(panels[indexcount - 1]);
-            // Удалить флажок из второй ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(checkBoxes[indexcount - 1]);
-            // Удалить поле для ввода текста из третьей ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(textBoxes[indexcount - 1]);
 
             tableLayoutPanel1.RowCount--;
@@ -69,16 +55,13 @@ namespace Dirary
         // Добавление при нажатии на кнопку новой строки.
         public void buttonAddStr_Click(object sender, EventArgs e)
         {
-            // Если строк больше 50-ти, то вывести предупреждающее сообщение с 
-            // прерыванием операции добавления новой строки с задачей.
             if (tableLayoutPanel1.RowCount > 50)
             {
                 MessageBox.Show("Достигнуто максимальное количество допустимых задач!");
                 return;
             }
 
-            // Увеличить максимальное количество строк
-            // для создания новой ячейки строки.
+            // Увеличить максимальное количество строк для новой задачи
             tableLayoutPanel1.RowCount++;
             // Создать строку, придав ей стиль и установив высоту.
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27));
@@ -86,9 +69,7 @@ namespace Dirary
             // Добавление элементов в таблицу
 
             // Добавление надписи.
-            // Создать надпись в массиве.
             labels[indexcount] = new Label();
-            // Выдать параметы для надписи.
             labels[indexcount].Text = $"{indexcount}";
             labels[indexcount].Dock = DockStyle.Fill;
             labels[indexcount].AutoSize = false;
@@ -100,33 +81,23 @@ namespace Dirary
             labels[indexcount].BackColor = Color.FromArgb(154, 144, 226);
 
             // Добавление панельки для флажка.
-            // Создать панельку в массиве.
             panels[indexcount] = new Panel();
-            // Заполнить панелью всю ячейку.
             panels[indexcount].Dock = DockStyle.Fill;
-            // Разместить панель во вторую ячейку строки.
             tableLayoutPanel1.Controls.Add(panels[indexcount], 1, tableLayoutPanel1.RowCount - 2);
 
             // Добавление флажка в панельку.
-            // Создать флажок в массиве.
             checkBoxes[indexcount] = new CheckBox();
-            // Поместить флажок внутрь панельки второй ячейки.
             panels[indexcount].Controls.Add(checkBoxes[indexcount]);
-            // Задать параметры для флажка.
             checkBoxes[indexcount].AutoSize = false;
             checkBoxes[indexcount].TextAlign = ContentAlignment.MiddleCenter;
             checkBoxes[indexcount].Location = new Point(42, 0);
             checkBoxes[indexcount].Cursor = Cursors.Hand;
 
             // Добавление текстового поля.
-            // Создать текстовое поле в массиве
             textBoxes[indexcount] = new TextBox();
-            // Прикрепить поле к верху ячейки.
             textBoxes[indexcount].Dock = DockStyle.Top;
-            // Поместить поле в третью ячейку строки.
             tableLayoutPanel1.Controls.Add(textBoxes[indexcount], 2, tableLayoutPanel1.RowCount - 2);
 
-            // Увеличить переменную индексации, чтобы добавить новую задачу при нажатии на кнопку.
             indexcount++;
         }
 
@@ -138,7 +109,6 @@ namespace Dirary
                                                 this.checkBox2.Checked, this.textBox1.Text,
                                                 this.textBox2.Text, this.dateTimePicker);
 
-            // Создать объект для сохранения данных в XML-файл.
             XmlSerializer xml = new XmlSerializer(typeof(ComponentsUI));
 
             // Удалить файл с сохранёнными задачами на выбранный день...
@@ -149,28 +119,21 @@ namespace Dirary
                 xml.Serialize(fs, cUI);
             }
 
-            // Вывести пользователю уведомление о сохранении.
             MessageBox.Show("Задачи успешно сохранены!");
         }
 
         // Событие, срабатывающее при выборе другого дня.
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            // Очистить значения на выбранный день.
             Clear();
-            // Если есть сохранённые задачи на выбранные день, то отобразить их.
             InitializeTasks();
         }
-
-
 
         // Метод для возврата объекта, содержащего сохранённые данные из XML-файла.
         private ComponentsUI DeserializeTasks(string path)
         {
-            // Создать сперва ссылку на объект.
             ComponentsUI cUI = null;
 
-            // Создать объект, используемый для десериализации.
             XmlSerializer xml = new XmlSerializer(typeof(ComponentsUI));
 
             // Если файл существует, то извлечь объект с сохранёнными данными.
@@ -182,11 +145,8 @@ namespace Dirary
                     return cUI;
                 }
             }
-            // Если файл не существует, то вернуть пустую ссылку.
             else return cUI;
         }
-
-
 
         // Методы работы с отображением данных.
 
@@ -215,9 +175,8 @@ namespace Dirary
         // Добавление в окно приложения сохранённых на выбранный день задач.
         private void InitializeTasks()
         {
-            // Взять дату выбранного дня
             dateTime = dateTimePicker.Value.Date;
-            // Создать путь к файлу XML, в котором будет храниться информация на выбранный день.
+            // Создать путь к файлу XML.
             string path = path_directory + "\\saved_tasks\\" + dateTime.Date.ToString("d").Replace('.', '_') + ".xml";
 
             // Извлечь данные из XML-файла.
@@ -239,7 +198,6 @@ namespace Dirary
                 // Добавление строк.
                 tableLayoutPanel1.RowCount++;
                 tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27));
-                // Добавление надписи c соответствующими для ежедневника параметрами.
                 labels[i] = new Label();
                 labels[i].Text = $"{i}";
                 labels[i].Dock = DockStyle.Fill;
