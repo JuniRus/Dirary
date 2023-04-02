@@ -24,7 +24,8 @@ namespace Dirary
         // Переменная времени.
         public DateTime date;
 
-        // Массивы для содержания сохранённых значений.
+        // Массивы для содержания сохранённых значений 
+        // флажков и текстовых полей.
         public bool[] checkeds = new bool[53];
         public string[] tasks = new string[53];
 

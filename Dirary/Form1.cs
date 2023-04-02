@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -22,17 +16,23 @@ namespace Dirary
         // Переменная времени для пути файлов.
         DateTime dateTime;
 
-        // Получение полного пути к файлам сохранения задач.
+        // Создание полного пути к файлам сохранения задач.
         static string path_program = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        // Получения полного пути к файлам сохранения задач.
         public static string path_directory = Path.GetDirectoryName(path_program);
 
         // Создать массивы, хранящих объекты для заполнения полей
+
+        // Массив надписей, обозначающих номер задачи.
         public static Label[] labels = new Label[53];
+        // Массив флажков для отметки выполненных задач.
         public static CheckBox[] checkBoxes = new CheckBox[53];
+        // Массив текстовых полей для описания задачи.
         public static TextBox[] textBoxes = new TextBox[53];
+        // Массив панелей для размещения флажков в таблице.
         public static Panel[] panels = new Panel[53];
 
-        // При запуске программы.
+        // Срабатывает сразу при запуске программы.
         public Form1()
         {
             InitializeComponent();
@@ -45,17 +45,23 @@ namespace Dirary
         private void buttonDelStr_Click(object sender, EventArgs e)
         {
             // Если остаётся две строки задачи, то вывести предупреждающее сообщение.
-            if (tableLayoutPanel1.RowCount == 3)
+            if (tableLayoutPanel1.RowCount == 3 || indexcount >= 51)
             {
                 MessageBox.Show("Достигнуто минимально допустимое количество строк!");
                 return;
             }
 
             // Удалить задачи со строками.
+
+            // Удалить надпись из первой ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(labels[indexcount - 1]);
+            // Удалить пенель флажка из второй ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(panels[indexcount - 1]);
+            // Удалить флажок из второй ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(checkBoxes[indexcount - 1]);
+            // Удалить поле для ввода текста из третьей ячейки таблицы.
             tableLayoutPanel1.Controls.Remove(textBoxes[indexcount - 1]);
+
             tableLayoutPanel1.RowCount--;
             indexcount--;
         }
@@ -63,48 +69,61 @@ namespace Dirary
         // Добавление при нажатии на кнопку новой строки.
         public void buttonAddStr_Click(object sender, EventArgs e)
         {
-            // Если строк больше 50-ти.
+            // Если строк больше 50-ти, то вывести предупреждающее сообщение с 
+            // прерыванием операции добавления новой строки с задачей.
             if (tableLayoutPanel1.RowCount > 50)
             {
                 MessageBox.Show("Достигнуто максимальное количество допустимых задач!");
                 return;
             }
 
-            // Увелить максимальное количество строк
+            // Увеличить максимальное количество строк
             // для создания новой ячейки строки.
             tableLayoutPanel1.RowCount++;
-            // Создать строку, придав ей стиль.
+            // Создать строку, придав ей стиль и установив высоту.
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27));
 
             // Добавление элементов в таблицу
 
             // Добавление надписи.
+            // Создать надпись в массиве.
             labels[indexcount] = new Label();
+            // Выдать параметы для надписи.
             labels[indexcount].Text = $"{indexcount}";
             labels[indexcount].Dock = DockStyle.Fill;
             labels[indexcount].AutoSize = false;
             labels[indexcount].TextAlign = ContentAlignment.MiddleCenter;
             labels[indexcount].Font = new Font(labels[indexcount].Font.Name, 8);
+            // Добавить надпись в первую ячейку строки.
             tableLayoutPanel1.Controls.Add(labels[indexcount], 0, tableLayoutPanel1.RowCount - 2);
             // Изменить фоновый цвет ячейки с надписью.
             labels[indexcount].BackColor = Color.FromArgb(154, 144, 226);
 
             // Добавление панельки для флажка.
+            // Создать панельку в массиве.
             panels[indexcount] = new Panel();
+            // Заполнить панелью всю ячейку.
             panels[indexcount].Dock = DockStyle.Fill;
+            // Разместить панель во вторую ячейку строки.
             tableLayoutPanel1.Controls.Add(panels[indexcount], 1, tableLayoutPanel1.RowCount - 2);
 
             // Добавление флажка в панельку.
+            // Создать флажок в массиве.
             checkBoxes[indexcount] = new CheckBox();
+            // Поместить флажок внутрь панельки второй ячейки.
             panels[indexcount].Controls.Add(checkBoxes[indexcount]);
+            // Задать параметры для флажка.
             checkBoxes[indexcount].AutoSize = false;
             checkBoxes[indexcount].TextAlign = ContentAlignment.MiddleCenter;
             checkBoxes[indexcount].Location = new Point(42, 0);
             checkBoxes[indexcount].Cursor = Cursors.Hand;
 
             // Добавление текстового поля.
+            // Создать текстовое поле в массиве
             textBoxes[indexcount] = new TextBox();
+            // Прикрепить поле к верху ячейки.
             textBoxes[indexcount].Dock = DockStyle.Top;
+            // Поместить поле в третью ячейку строки.
             tableLayoutPanel1.Controls.Add(textBoxes[indexcount], 2, tableLayoutPanel1.RowCount - 2);
 
             // Увеличить переменную индексации, чтобы добавить новую задачу при нажатии на кнопку.
@@ -220,7 +239,7 @@ namespace Dirary
                 // Добавление строк.
                 tableLayoutPanel1.RowCount++;
                 tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 27));
-                // Добавление надписи.
+                // Добавление надписи c соответствующими для ежедневника параметрами.
                 labels[i] = new Label();
                 labels[i].Text = $"{i}";
                 labels[i].Dock = DockStyle.Fill;
@@ -231,12 +250,12 @@ namespace Dirary
                 // Изменить фоновый цвет ячейки с надписью.
                 labels[i].BackColor = Color.FromArgb(154, 144, 226);
 
-                // Добавление панельки для флажка.
+                // Добавление панельки для флажка c соответствующими для ежедневника параметрами.
                 panels[i] = new Panel();
                 panels[i].Dock = DockStyle.Fill;
                 tableLayoutPanel1.Controls.Add(panels[i], 1, tableLayoutPanel1.RowCount - 2);
 
-                // Добавление флажка в панельку.
+                // Добавление флажка в панельку c соответствующими для ежедневника параметрами.
                 checkBoxes[i] = new CheckBox();
                 panels[i].Controls.Add(checkBoxes[i]);
                 checkBoxes[i].AutoSize = false;
@@ -246,7 +265,7 @@ namespace Dirary
                 // Добавление значения флажка из сохранённого объекта.
                 checkBoxes[i].Checked = componentsUI.checkeds[i];
 
-                // Добавление текстового поля.
+                // Добавление текстового поля c соответствующими для ежедневника параметрами.
                 textBoxes[i] = new TextBox();
                 textBoxes[i].Dock = DockStyle.Top;
                 // Добавление значения флажка из сохранённого объекта.
